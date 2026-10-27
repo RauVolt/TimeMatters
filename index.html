@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142c26">
+  <title>TimeMatters · Le temps a de la valeur</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" type="module"></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="./"><span class="brand-icon">◷</span> TimeMatters<span class="brand-dot">.</span></a><span class="badge"><i></i> Simplement, votre temps</span></header>
+  <main>
+    <section class="intro"><p class="eyebrow">CHAQUE MINUTE COMPTE</p><h1>Le temps a de la valeur.<br><span>Vos réunions aussi.</span></h1><p class="description">Visualisez le temps investi et le coût de vos réunions,<br class="desktop-break"> en temps réel. Pour des échanges qui comptent.</p></section>
+    <div class="workspace">
+      <section class="panel settings" aria-labelledby="settings-title">
+        <div class="section-heading"><span class="step">01</span><div><h2 id="settings-title">Préparer la réunion</h2><p>Quelques chiffres, et c’est parti.</p></div></div>
+        <form id="settings-form">
+          <fieldset id="settings-fields">
+            <legend class="sr-only">Tarifs et participants</legend>
+            <div class="field-group"><div class="group-label"><span class="people-icon">♧</span><h3>Équipe interne</h3></div><div class="field-row"><label for="internal-rate">Taux horaire<div class="input-wrap"><input id="internal-rate" type="number" min="0" max="1000000" step="0.01" value="60" required inputmode="decimal"><span>€ / h</span></div></label><label for="internal-count">Participants<div class="input-wrap"><input id="internal-count" type="number" min="0" max="100000" step="1" value="4" required inputmode="numeric"><span>pers.</span></div></label></div></div>
+            <div class="field-group"><div class="group-label"><span class="people-icon">◇</span><h3>Consultants</h3></div><div class="field-row"><label for="consultant-rate">Taux horaire<div class="input-wrap"><input id="consultant-rate" type="number" min="0" max="1000000" step="0.01" value="120" required inputmode="decimal"><span>€ / h</span></div></label><label for="consultant-count">Participants<div class="input-wrap"><input id="consultant-count" type="number" min="0" max="100000" step="1" value="1" required inputmode="numeric"><span>pers.</span></div></label></div></div>
+          </fieldset>
+          <div class="rate-summary"><span>Coût de la réunion par heure</span><strong id="hourly-cost">360,00 €</strong></div>
+          <p id="form-error" class="error" role="alert"></p>
+          <button class="primary" id="start-button" type="submit"><span>▶</span> Démarrer la réunion <span class="arrow">↗</span></button>
+        </form>
+        <p class="settings-note">Les tarifs restent fixes pendant la réunion.</p>
+      </section>
+      <section class="panel dashboard" aria-labelledby="dashboard-title">
+        <div class="dashboard-header"><h2 id="dashboard-title">Votre réunion, en direct</h2><span class="status" id="status"><i></i> Prête à démarrer</span></div>
+        <div class="cost-display"><p class="metric-label">COÛT TOTAL DE LA RÉUNION</p><div class="total" id="total-cost">0,00 <span>€</span></div><p class="cost-caption" id="cost-caption">Un petit compteur pour une grande prise de conscience.</p></div>
+        <div class="metrics"><div><span class="metric-label">TEMPS ÉCOULÉ</span><strong id="elapsed">00:00:00</strong><span>heures · minutes · secondes</span></div><div><span class="metric-label">TEMPS COLLECTIF</span><strong id="collective">0 min</strong><span id="participant-summary">5 participants mobilisés</span></div></div>
+        <div class="controls" id="controls" hidden><button id="pause-button" class="secondary" type="button">Ⅱ Mettre en pause</button><button id="finish-button" class="secondary" type="button">■ Terminer</button></div>
+        <button id="new-button" class="secondary new-button" type="button" hidden>↺ Préparer une nouvelle réunion</button>
+        <div class="insight"><span>↗</span><p>Une réunion de <strong>30 minutes</strong> représente <strong id="estimate">180,00 €</strong> de temps investi.</p></div>
+      </section>
+    </div>
+    <footer><span>◎ Sans compte. Sans intégration. Juste l’essentiel.</span><span>Votre temps mérite votre attention.</span></footer>
+  </main>
+</body>
+</html>
